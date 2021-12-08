@@ -45,6 +45,7 @@ export default function Addtask() {
             setError(false)
         }        
         setError(false)
+        setTaskName('')
     }
 
     return (

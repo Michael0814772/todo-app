@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, Container, IconButton, makeStyles, TextField, Typography } from '@material-ui/core';
+import { Button, Card, CardContent, Container, IconButton, makeStyles, Typography } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import React, { useState } from 'react'
@@ -33,6 +33,9 @@ const useStyles = makeStyles((theme) => ({
     },
     secondContent: {
         marginBottom: '10px'
+    },
+    newTask: {
+        padding: '10px'
     }
 }))
 
@@ -73,9 +76,10 @@ export default function Todoitem({ task }) {
                     </IconButton>
                 </CardContent>
                 <div className={classess.secondContent}>
-                    {show && <TextField type='text' className='input' id='input' label='New Task' variant='outlined' value={newTask} onChange={(e) => setNewTask(e.target.value)} />}
+                    {show && <input type='text' placeholder='New Task' className={classess.newTask} value={newTask} onChange={(e) => setNewTask(e.target.value)} />}
                     {show && <Button color='secondary' variant='contained' className={classess.btn} onClick={() => finalEdit(task)}>Final Edit</Button>}
                 </div>
+                
             </Card>
 
 
